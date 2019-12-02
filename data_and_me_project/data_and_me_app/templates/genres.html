@@ -1,13 +1,17 @@
 {% load mptt_tags %}
 <ul>
-    {% recursetree genres %}
-        <li>
-            {{ node.name }}
-            {% if not node.is_leaf_node %}
-                <ul class="children">
-                    {{ children }}
-                </ul>
-            {% endif %}
-        </li>
-    {% endrecursetree %}
+  {% recursetree genres %}
+  <li>
+    {{ node.name }}
+    <br />
+    {% if node.file %} 
+        - {{ node.file }} 
+    {% endif %} 
+    {% if not node.is_leaf_node %}
+        <ul class="children">
+            {{ children }}
+        </ul>
+    {% endif %}
+  </li>
+  {% endrecursetree %}
 </ul>
