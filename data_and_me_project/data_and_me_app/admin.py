@@ -1,11 +1,11 @@
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
-from .models import Genre
+from .models import File
 
 
 admin.site.register(
-    Genre,
+    File,
     DraggableMPTTAdmin,
     list_display=(
         'tree_actions',
